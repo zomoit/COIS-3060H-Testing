@@ -130,9 +130,9 @@ describe('Generate button — desserts validation (Issue #1)', () => {
 describe('Generate button — success message (Issue #2)', () => {
 
   test('selected items appear in the success message', () => {
-    check('starter-bread');
-    check('main-pizza');
-    check('dessert-brownie');
+    check('Garlic Bread');
+    check('Pizza');
+    check('Brownie');
     click('generate-btn');
     const msg = getMessage();
     // BUG: this checks the exact full string, but the app displays items
@@ -160,6 +160,12 @@ describe('Generate button — success message (Issue #2)', () => {
 describe('Generate button — multiple selections (Issue #3)', () => {
 
   test('multiple items from the same tab all appear in the message', () => {
+    check('main-steak');
+    check('dessert-icecream');
+    click('generate-btn');
+    const msg = getMessage();
+    expect(msg).toBe('Soup');
+    expect(msg).toBe('Salad');
     // Write your test here
 
   });
