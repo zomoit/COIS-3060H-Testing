@@ -162,10 +162,12 @@ describe('Generate button — multiple selections (Issue #3)', () => {
   test('multiple items from the same tab all appear in the message', () => {
     check('main-steak');
     check('dessert-icecream');
+    check('starter-salad');
+    check('starter-soup');
     click('generate-btn');
     const msg = getMessage();
-    expect(msg).toBe('Soup');
-    expect(msg).toBe('Salad');
+    expect(msg).toContain('Soup');
+    expect(msg).toContain('Salad');
     // Write your test here
 
   });
